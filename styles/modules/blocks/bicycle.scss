@@ -1,0 +1,25 @@
+.bicycle {
+   padding: 60px 0 60px 0;
+   margin-left: 120px;
+   &__info {
+      @include flex (row, space-between);
+   }
+   &__title {
+      @include fonts (55px, 60px, 700, $textColore);
+   }
+   &__navigation {
+      @include flex (row, flex-end);
+      margin-right: 120px;
+   }
+   &__button {
+      cursor: pointer;
+      @include fonts (18px, 28px, 400, #222222);
+      margin-left: 40px;
+      @include opacity (0.7, 0.6);
+   }
+   &__button_active {
+      color: $textColore;
+      font-weight: 600;
+      @include opacity (1, 0.75);
+   }
+}

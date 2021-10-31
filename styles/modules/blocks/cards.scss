@@ -1,0 +1,29 @@
+.cards {
+   padding: 120px 120px 0 0;
+   display: flex;
+   justify-content: space-between;
+   &__card {
+      @include flex (column, space-between);
+      max-height: 424px;
+      max-width: 380px;
+   }
+   &__image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 380px;
+      height: 380px;
+      background: #F4F4F4;
+      box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+      border-radius: 20px;
+   }
+   &__image {
+      object-fit: cover;
+      max-width: 340px;
+   }
+   &__info {
+      @include fonts (18px, 22px, 600, $textColore);
+      margin-top: 22px;
+      margin-left: 6px;
+   }
+}

@@ -1,0 +1,291 @@
+.info {
+   padding-left: 120px;
+   position: relative;
+   padding-top: 20px;
+   @include grid(1fr auto, repeat(5,auto));
+   justify-items: start;
+   align-items: start;
+   grid-template-areas: 
+         'title image'
+         'subtitle image'
+         'button image'
+         'bicycle image'
+         '. image';
+   &__title {
+      @include fonts(55px, 60px, 700, $textColore);
+      max-width: 300px;
+      margin: 50px 0 0 0;
+      grid-area: title;
+   }
+   &__subtitle {
+      max-width: 460px;
+      @include fonts(18px, 28px, 400, $textColore);
+      margin: 50px 0 0 0;
+      opacity: 0.7;
+      grid-area: subtitle;
+   }
+   &__button-text {
+      position: relative;
+      z-index: 2;
+      display: block;
+   }
+   &__button {
+      cursor: pointer;
+      position: relative;
+      width: 180px;
+      height: 50px;
+      background-color: #24B47E;
+      border: 0;
+      border-radius: 4px;
+      @include fonts(14px, 18px, 600,#fff);
+      margin: 50px 0 0 0;
+      padding: 0;
+      z-index: 0;
+      grid-area: button;
+      &:hover::before {
+         width: 180px;
+         height: 50px;
+      };
+      &::before {
+         transition-timing-function: ease;
+         transition-duration: 2s;
+         content: '';
+         position: absolute; 
+         top: 0;
+         left: 0;
+         height: 100%;
+         width: 0;
+         background: #319E75;
+         z-index: 1;
+         border-radius: 4px;
+      }
+   }
+   &__bicycle {
+      @include fonts(18px, 18px, 400, $textColore);
+      margin: 167px 0 0 0;
+      background-image: url('../image/Color-BG.svg');
+      background-repeat: no-repeat;
+      background-position: 100% 50%;
+      grid-area: bicycle;
+      height: 18px;
+      width: 358px;
+   }
+   &__image {
+      object-fit: cover;
+      max-width: 610px;
+      max-height: 836px;
+      grid-area: image;
+   }
+   &__stiky {
+      position: absolute;
+      height: 430px;
+      width: 440px;
+      bottom: 79px;
+      right: 370px;
+   }
+   &__stiky-image-container {
+      position: sticky;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      right: 0;
+      width: 440px;
+      height: 352.26px;
+      background-color: #F4F4F4;
+      border-radius: 20px;
+      box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+   }
+   &__stiky-image {
+      object-fit: cover;
+   }
+}
+
+@media screen and (max-width: 1330px) {
+   .info {
+      &__image {
+         max-width: 45.87vw;
+         max-height: 62.86vw;
+      }
+      &__title {
+         @include fonts (40px, 55px, null, null);
+         margin-top: 40px;
+         max-width: 240px;
+      }
+      &__stiky {
+         height: 32.331vw;
+         width: 33.09vw;
+         bottom: 5.94vw;
+         right: 20.82vw;
+      }
+      &__stiky-image-container {
+         width: 33.09vw;
+         height: 26.486vw;
+      }
+      &__stiky-image {
+         max-width: 25.57vw;
+      }
+      &__subtitle {
+         max-width: 310px;
+         @include fonts(14px, 20px, null, null);
+         margin: 30px 0 0 0;
+      }
+      &__bicycle {
+         @include fonts(14px, 18px, null, null);
+         margin: 12.5vw 0 0 0;
+         width: 300px;
+      }
+      &__button {
+         margin: 30px 0 0 0;
+      }
+   }
+}
+
+@media screen and(max-width: 960px) {
+   .info {
+      padding-left: 60px;
+      grid-template-areas:
+      'title image'
+      'subtitle image'
+      '. image'
+      'button image';
+
+      &__image {
+         max-width: 65vw;
+         justify-self: end;
+      }
+      &__stiky {
+         height: 310px;
+         width: 300px;
+         bottom: 80px;
+         right: 25vw;
+      }
+      &__stiky-image-container {
+         width: 308px;
+         height: 244px;
+      }
+      &__stiky-image {
+         max-width: 245px;
+      }
+      &__subtitle {
+         @include fonts(12px, 20px, 400, $textColore);
+         margin: 40px 0 0 0;
+      }
+      &__bicycle {
+         display: none;
+      }
+      &__button {
+         margin-top: 40px;
+      }
+   }
+}
+
+@media screen and (max-width: 900px) {
+   .info {
+      padding-left: 60px;
+      padding-bottom: 80px;
+      padding-right: 18px;
+      border-bottom: 1px solid #E3E3E3;
+      grid-template-areas: 
+         'title image'
+         '.image'
+         '.image'
+         'button image'
+         'subtitle .';
+
+      &__image {
+         max-width: 610px;
+         max-height: 696px;
+         margin-top: 40px;
+      }
+      &__title {
+         margin-top: 40px;
+      }
+      &__stiky {
+         height: 320px;
+         width: 310px;
+         bottom: 360px;
+         right: 32vw;
+      }
+      &__stiky-image-container {
+         width: 318px;
+         height: 254px;
+      }
+      &__stiky-image {
+         max-width: 245px;
+      }
+   }
+}
+
+@media screen and (max-width: 822px) {
+   .info {
+      grid-template-areas: 
+         'title'
+         'image'
+         'subtitle'
+         'button';
+   }
+}
+
+@media screen and (max-width: 590px) {
+   .info {
+      padding-left: 18px;
+      &__image {
+         max-width: 85vw;
+      }
+      &__stiky {
+         height: 54.3vw;
+         width: 52.6vw;
+         bottom: 360px;
+         right: 44vw;
+      }
+      &__stiky-image-container {
+         width: 53.8vw;
+         height: 43vw;
+      }
+      &__stiky-image {
+         max-width: 41.54vw;
+      }
+   }
+}
+
+@media screen and (max-width: 370px) {
+   .info {
+      padding-top: 30px;
+      &__image {
+         width: 254px;
+      }
+      &__stiky {
+         height: 234px;
+         width: 234px;
+         bottom: 315px;
+         right: 68px;
+      }
+      &__stiky-image-container {
+         width: 234px;
+         height: 180px;
+      }
+      &__stiky-image {
+         max-width: 180.82px;
+      }
+      &__title {
+         @include fonts (32px, 40px, null, null);
+         max-width: 190px;
+      }
+      &__subtitle {
+         max-width: 284px;
+         @include fonts(12px, null, null, null);
+         margin: 30px 0 0 0;
+      }
+      &__button {
+         width: 284px;
+         height: 46px;
+         @include fonts (13px, 19px, null, null);
+         margin-top: 30px;
+         &:hover::before {
+            width: 284px;
+            height: 46px;
+         };
+      }
+   }
+}
