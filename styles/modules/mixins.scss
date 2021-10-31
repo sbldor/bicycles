@@ -1,0 +1,38 @@
+@mixin fonts ($size, $line, $weight, $color){
+   font-size: $size;
+   line-height: $line;
+   font-weight: $weight;
+   color: $color;
+   font-style: normal;
+   margin: 0;
+}
+
+@mixin grid ($columns, $rows){
+   display: grid;
+   grid-template-columns: $columns;
+   grid-template-rows: $rows;
+}
+
+@mixin flex ($dir, $just){
+   display: flex;
+   flex-direction: $dir;
+   justify-content: $just;
+} 
+
+@mixin button ($width, $height, $transform, $opacity) {
+   width: $width;
+   height: $height;
+   opacity: 1;
+   transition: $transform;
+   &:hover {
+      opacity: $opacity;
+   }
+}
+
+@mixin opacity ($firctOpac, $twoOpac) {
+   opacity: $firctOpac;
+   transition: all 0.3s ease;
+   &:hover {
+      opacity: $twoOpac;
+   }
+}

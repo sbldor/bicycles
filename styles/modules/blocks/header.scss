@@ -1,0 +1,23 @@
+.header {
+   // margin: 0 auto 0;
+   position: sticky;
+   // max-width: 1440px;
+   z-index: 10;
+   top: 0;
+   right: 0;
+   &__menu {
+      display: flex;
+      justify-content: flex-end;
+      background-color: $backColore;
+   }
+   &__title {
+      @include fonts(14px, 18px, 500, $textColore);
+      margin: 28px 34px 28px 0;
+      @include opacity (1, 0.75);
+      text-decoration: none;
+      cursor: pointer;
+      &:last-of-type {
+         margin-right: 120px;
+      }
+   }
+}

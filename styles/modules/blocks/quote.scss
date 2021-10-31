@@ -1,0 +1,115 @@
+.quote {
+   @include flex (row, flex-start);
+   padding: 120px 120px 60px 120px;
+   // &__image-container {
+   //    max-width: 45.1389vw;
+   //    max-height: 31.945vw;
+   // }
+   &__image {
+      max-width: 45.1389vw;
+      max-height: 31.945vw;
+      object-fit: cover;
+      // width: 650px;
+      // height: 460px;
+   }
+   &__text-container {
+      @include flex (column, flex-start);
+      flex-basis: auto;
+      
+      margin-left: 80px;
+   }
+   &__title {
+      @include fonts(34px, 44px, 600, $textColore);
+      max-width: 470px;
+      flex-grow: 1;
+   }
+   &__name {
+      @include fonts(20px, 32px, 500, $textColore);
+      margin-bottom: 6px;
+   }
+   &__info {
+      @include fonts(16px, 28px, 400, $textColore);
+      opacity: 0.7;
+   }
+}  
+
+@media screen and (max-width: 1330px){
+   .quote__image {
+      max-width: 37.6vw;
+   }
+}
+
+@media screen and (max-width: 1150px){
+   .quote__title {
+      @include fonts(20px, 30px, 600, null);
+   }
+   .quote__name {
+      @include fonts(18px, 30px, 500, null);
+   }
+}
+
+@media screen and (max-width: 900px){
+   .quote {
+      padding: 20px 18px 60px 18px;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid #E3E3E3;
+      &__text-container {
+         margin-left: 0;
+         align-self:flex-start;
+         margin-top: 40px;
+      }
+      &__image {
+         width: 100%;
+         max-width: 864px;
+         max-height: 67.938vw;
+      }
+      &__title {
+      @include fonts(34px, 44px, null, null);
+      }
+      &__name {
+      @include fonts(20px, 32px, null, null);
+      margin-top: 40px;
+      }
+      &__info {
+      @include fonts(16px, 28px, null, null);
+      margin-top: 4px;
+      }
+   }
+}
+
+@media screen and (max-width: 625px){
+   .quote {
+      padding: 20px 18px 60px 18px;
+      &__title {
+      @include fonts(28px, 35px, null, null);
+      max-width: 400px
+      }
+      &__name {
+      @include fonts(18px, 28px, null, null);
+      margin-top: 40px;
+      }
+      &__info {
+      @include fonts(12px, 20px, null, null);
+      margin-top: 4px;
+      }
+   }
+}
+
+@media screen and (max-width: 440px){
+   .quote {
+      padding: 20px 18px 80px 18px;
+      &__title {
+      @include fonts(22px, 29px, null, null);
+      max-width: 284px
+      }
+      &__name {
+      @include fonts(14px, 24px, null, null);
+      margin-top: 40px;
+      }
+      &__info {
+      @include fonts(10px, 16px, null, null);
+      margin-top: 4px;
+      }
+   }
+}

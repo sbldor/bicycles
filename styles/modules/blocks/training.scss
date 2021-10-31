@@ -1,0 +1,122 @@
+.training {
+   padding: 150px 120px 120px 120px;
+   @include grid(1fr auto, repeat(4,auto));
+   justify-items: start;
+   align-items: start;
+   column-gap: 20px;
+   grid-template-areas: 
+         'title image'
+         'subtitle image'
+         '. image'
+         'app image';
+   &__title {
+      @include fonts (55px, 50px, 700, $textColore);
+      margin-bottom: 50px;
+      grid-area: title;
+   }
+   &__subtitle {
+      @include fonts (18px, 28px, 400, $textColore);
+      opacity: 0.7;
+      max-width: 460px;
+      grid-area: subtitle;
+   }
+   &__apps {
+      @include flex (row, space-between);
+      width: 154px;
+      grid-area: app;
+      align-self: end;
+   }
+   &__app {
+      cursor: pointer;
+      @include fonts (18px, 28px, 600, $textColore);
+      @include opacity (1, 0.75);
+   }
+   &__image {
+      max-width: 580px;
+      max-height: 460px;
+      grid-area: image;
+   }
+}
+
+@media screen and (max-width: 1330px) {
+   .training {
+      &__image {
+         max-width: 40.61vw;
+      }
+      &__title {
+         @include fonts (40px, 55px, null, null);
+         margin-bottom: 50px;
+      }
+      &__subtitle {
+         @include fonts(14px, 20px, null, null);
+         max-width: 360px;
+      }
+      &__app {
+         @include fonts(14px, 20px, null, null);
+      }
+   }
+}
+
+@media screen and (max-width: 1150px) {
+   .training {
+      &__image {
+         max-width: 35.61vw;
+      }
+      &__title {
+         @include fonts (40px, 55px, null, null);
+         margin-bottom: 30px;
+      }
+      &_subtitle {
+         max-width: 300px;
+      }
+   }
+}
+
+@media screen and (max-width: 900px) {
+   .training {
+      padding: 40px 18px 60px 18px;
+      border-bottom: 1px solid #E3E3E3;
+      &__image {
+         max-width: 45.61vw;
+      }
+   }
+}
+
+@media screen and (max-width: 700px) {
+   .training {
+   column-gap: 0;
+   grid-template-areas: 
+         'title'
+         'image'
+         'subtitle'
+         'app';
+      &__image {
+         width: 100%;
+         max-width: 664px;
+         max-height: 500px;
+         margin-bottom: 40px;
+      }
+      &__subtitle {
+         margin-bottom: 40px;
+      }
+      &__apps {
+         width: 127px;
+      }
+   }
+}
+
+@media screen and (max-width: 370px) {
+   .training {
+      &__title {
+         @include fonts (32px, 40px, null, null);
+         margin-bottom: 40px;
+      }
+      &__subtitle {
+         @include fonts (12px, 18px, null, null);
+         margin-bottom: 40px;
+      }
+      &__app {
+         @include fonts (14px, 20px, null, null);
+      }
+   }
+}

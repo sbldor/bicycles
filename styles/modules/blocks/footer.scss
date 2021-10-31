@@ -1,0 +1,109 @@
+.footer {
+   padding: 80px 0 60px 120px;
+   background-color: #EFEFEF;
+   &__title {
+      @include fonts (24px, 32px, 600, $textColore);
+      margin-bottom: 50px;
+      max-width: 229px;
+   }
+   &__form {
+      cursor: pointer;
+      width: 360px;
+      box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      padding: 2px;
+      border: 1px solid rgba(199, 199, 199, 0.5);
+      box-sizing: border-box;
+      border-radius: 4px;
+      height: 50px;
+      margin-bottom: 100px;
+   }
+   &__input {
+      cursor: pointer;
+      border: 0;
+      height: 26px;
+      background-color: #EFEFEF;
+      padding: 0;
+      @include fonts (13px, 27px, 500, $textColore);
+      padding: 11px 0 11px 20px;
+      width: 282px;
+      
+      &:focus {
+         outline: none;
+         border: 0;
+      }
+      &::placeholder {
+         opacity: 0.7;
+         transition: all 3ms ease;
+      }
+      &:hover::placeholder {
+         color: $textColore;
+;
+         opacity: 1;
+      }
+   }
+   &__button {
+      visibility: hidden;
+      cursor: pointer;
+      @include button(16px, 28px, null, null);
+      border: 0;
+      background-color: #EFEFEF;
+   }
+   &__button_aktive {
+      visibility: visible;
+   }
+   &__bottom {
+      @include flex(row, space-between);
+      width: 100%;
+   }
+   &__copy {
+      @include fonts(14px, 19.6px, 600, #CFCFCF);
+   }
+   &__switch {
+      width: 135.35px;
+      position: relative;
+      @include flex(row, space-between);
+      margin-right: 122.65px;
+   }
+   &__sun {
+      width: 28px;
+   }
+   &__oval {
+      width: 44px;
+   }
+   &__ball {
+      position: absolute;
+      top: 4px;
+      right: 63px;
+      background-color: #24B47E;
+      border-radius: 50%;
+   }
+   &__moon {
+      width: 19.35px;
+   }
+}
+
+@media screen and (max-width: 900px) {
+   .footer{
+      padding: 60px 18px 25px 18px;
+      &__switch {
+         margin-right: 16px; 
+      }
+   }
+}
+
+@media screen and (max-width: 396px) {
+   .footer{
+      &__form {
+         width: 284px;
+      }
+      &__input {
+         width: 206px;
+      }
+   }
+}
+
+
+
+
