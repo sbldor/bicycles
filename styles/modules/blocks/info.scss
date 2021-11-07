@@ -16,13 +16,20 @@
       max-width: 300px;
       margin: 50px 0 0 0;
       grid-area: title;
+      &_dark {
+         color: $textColoreDark;
+      }
    }
    &__subtitle {
       max-width: 460px;
-      @include fonts(18px, 28px, 400, $textColore);
+      @include fonts(18px, 28px, 400, #222222);
       margin: 50px 0 0 0;
       opacity: 0.7;
       grid-area: subtitle;
+      &_dark {
+         color:#E5E5E5;
+;
+      }
    }
    &__button-text {
       position: relative;
@@ -69,6 +76,10 @@
       grid-area: bicycle;
       height: 18px;
       width: 358px;
+      &_dark {
+         background-image: url('../image/color-bg-dark.svg');
+         color: $textColoreDark;
+      }
    }
    &__image {
       object-fit: cover;
@@ -168,7 +179,7 @@
          max-width: 245px;
       }
       &__subtitle {
-         @include fonts(12px, 20px, 400, $textColore);
+         @include fonts(12px, 20px, 400, null);
          margin: 40px 0 0 0;
       }
       &__bicycle {

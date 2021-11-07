@@ -1,14 +1,29 @@
 .header {
-   // margin: 0 auto 0;
-   position: sticky;
-   // max-width: 1440px;
-   z-index: 10;
+   margin: 0 auto 0;
+   position: fixed;
+   max-width: 1440px;
+   width: 100%;
+   z-index: 13;
    top: 0;
-   right: 0;
+   // right: 0;
+   display: flex;
+   align-items: center;
+   // justify-content: flex-end;
+   min-height: 74px;
+   &__switcher-ball_dark {
+      right: 44px;
+   }
+   &_dark {
+      background-color: $backColoreDark;
+   }
    &__menu {
       display: flex;
       justify-content: flex-end;
       background-color: $backColore;
+      width: 100%;
+      &_dark {
+         background-color: $backColoreDark;
+      }
    }
    &__title {
       @include fonts(14px, 18px, 500, $textColore);
@@ -18,6 +33,117 @@
       cursor: pointer;
       &:last-of-type {
          margin-right: 120px;
+      }
+      &_dark {
+         color: $textColoreDark;
+      }
+   }
+   &__burger {
+      display: none;
+   }
+   &__switcher {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 650px){
+   .header {
+      background-color: $backColore;
+      &_dark {
+      background-color: $backColoreDark;
+      }
+      &__burger {
+         display: block;
+         position: absolute;
+         top: 28px;
+         right: 18px;
+         z-index: 13;
+         width: 22px;
+         height: 19px;
+         cursor: pointer;
+         &-menu,
+         &::after,
+         &::before {
+            left: 0;
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            transition: all 0.3s ease;
+            background-color: #151515;
+            
+         }
+         
+         &::after,
+         &::before {
+            content: '';
+
+         }
+         &::before {
+            top: 0;
+         }
+         &::after {
+            bottom: 0;
+         }
+         &-menu {
+            top: 50%;
+            transform: scale(1) translate(0px, -50%);
+            &_dark {
+               background-color: #fff;
+            }
+         }
+         &_active .header__burger-menu {
+            transform: scale(0) translate(0px, -50%);
+         }
+         &_active::before {
+            width: 120%;
+            top: 50%;
+            transform: rotate(-45deg) translate(0px, -50%);
+         }
+         &_active::after {
+            width: 120%;
+            bottom: 50%;
+            transform: rotate(45deg) translate(0px, 50%);
+         }
+         &_dark {
+            color: $textColoreDark;
+            &::before,
+            &::after {
+               content: '';
+               background-color: #fff;
+            }
+         }
+      }
+      &__menu {
+         position: fixed;
+         height: 100vh;
+         top: 73px;
+         right: -100%;
+         width: 100%;
+         overflow: auto;
+         transition: right 0.3s ease;
+         justify-content: flex-start;
+         align-items: center;
+         flex-direction: column;
+         // padding: 18px;
+         // margin-top: 74px;
+         padding-top: 70px;
+         &_active {
+            right: 0;
+         }
+      }
+      &__switcher {
+         @include flex(row, space-between);
+         margin: 0;
+         position: fixed;
+         bottom: 40px;
+         
+      }
+      &__title {
+         margin: 0;
+         padding: 16px;
+         &:last-of-type {
+            margin: 0;
+         }
       }
    }
 }

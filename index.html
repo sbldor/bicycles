@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="Bicycles">
    <meta name="author" content="Andrey Sydor">
+   <base href="">
    <link rel="stylesheet" href="./styles/style.css">
    <link rel="stylesheet" href="./vendor/swiper-bundle.css">
    <title>Bicycles</title>
@@ -12,11 +13,21 @@
 <body class= "page">
 
    <header class="header">
+      <div class="header__burger">
+         <span class="header__burger-menu"></span>
+      </div>
       <nav class="header__menu">
          <a href="#description" class="header__title">Покрытия и градиенты</a>
          <a href="#bicycle" class="header__title">Велосипеды</a>
          <a href="#training" class="header__title">Тренировки</a>
+         <div class="switcher header__switcher">
+            <img src="image/sun.svg" alt="&lArr;" class="switcher__sun">
+            <img src="image/oval.svg" alt="&sub;&sup;" class="switcher__oval header__switcher-oval">
+            <img src="image/ball.svg" alt="&bull;" class="switcher__ball header__switcher-ball">
+            <img src="image/moon.svg" alt="&rArr;" class="switcher__moon">
+         </div>
       </nav>
+
    </header>
 
    <main>
@@ -27,18 +38,18 @@
          <button type="button" class="info__button"><span class="info__button-text">Подробнее</span></button>
          <p class="info__bicycle">Cannondale Systemsix</p>
          
-         <img src="image/info-image.png" alt="" class="info__image">
+         <img src="image/info-image.png" alt="Главная картинка" class="info__image">
          
          <div class="info__stiky">
             <div class="info__stiky-image-container">
-               <img src="image/buke.png" alt="" class="info__stiky-image">
+               <img src="image/buke.png" alt="Велосипед" class="info__stiky-image">
             </div>
          </div>
       </section>
       <!-- !section quote -->
       <section class="quote">
          
-         <img src="image/Placeholder.png" alt="" class="quote__image">
+         <img src="image/Placeholder.png" alt="Горы" class="quote__image">
          
          <div class="quote__text-container">
             <h2 class="quote__title">«Катайся много или мало, долго или коротко, как хочешь - но катайся»</h2>
@@ -62,8 +73,8 @@
                   <p class="description__subtitle">На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь то горы или равнины. Гонки проходят в
                   командном пелотоне, но тренироваться можно и самостоятельно.</p>
                   <div class="description__imags-container">
-                     <img src="image/descr-1slide.png" alt="." class="description__image">
-                     <img src="image/descr-two.png" alt="." class="description__image description__image_none">
+                     <img src="image/descr-1slide.png" alt="Главный слайд" class="description__image">
+                     <img src="image/descr-two.png" alt="Второй слайд" class="description__image description__image_none">
                   </div>
                </div>
                <!-- ! 2 SLIDE -->
@@ -72,8 +83,8 @@
                   <p class="description__subtitle">Грэвел похож на шоссейный велосипед, но конструкция рамы немного отличается, и на нём стоят более широкие покрышки, всё
                   для того чтобы проехать по лёгкому бездорожью.</p>
                   <div class="description__imags-container">
-                     <img src="image/grevel.png" alt="." class="description__image">
-                     <img src="image/grevel-two.png" alt="." class="description__image description__image_none">
+                     <img src="image/grevel.png" alt="Главный слайд" class="description__image">
+                     <img src="image/grevel-two.png" alt="Второй слайд" class="description__image description__image_none">
                   </div>
                </div>
                <!-- ! 3 SLIDE -->
@@ -82,8 +93,8 @@
                   <p class="description__subtitle">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком велике только по равнинному асфальту, велик
                   очень быстрые и аэродинамичный.</p>
                   <div class="description__imags-container">
-                     <img src="image/tt.png" alt="." class="description__image">
-                     <img src="image/tt-two.png" alt="." class="description__image description__image_none">
+                     <img src="image/tt.png" alt="Главный слайд" class="description__image">
+                     <img src="image/tt-two.png" alt="Второй слайд" class="description__image description__image_none">
                   </div>
                </div>
 
@@ -93,48 +104,109 @@
       <!-- !section bicycle -->
       
       <!-- ? немного не понятно, здесть сразу должен быть слайдер велосипедов, или появляться на разрешении меньше? -->
-      <!-- <section class="bicycle" id="bicycle">
+      <section class="bicycle" id="bicycle">
          <div class="bicycle__info">
             <h2 class="bicycle__title">Велосипеды</h2>
             <nav class="bicycle__navigation">
-               <p class="bicycle__button bicycle__button_active">Шоссе</p>
-               <p class="bicycle__button">Грэвел</p>
-               <p class="bicycle__button">TT</p>
+               <button type="button" class="bicycle__button-bar"><span class="bicycle__content">Шоссе</span> <span class="bicycle__jack">&or;</span></button>
+               <p data-tab-name="tab-1" class="bicycle__button bicycle__button_active">Шоссе</p>
+               <p data-tab-name="tab-2" class="bicycle__button">Грэвел</p>
+               <p data-tab-name="tab-3" class="bicycle__button">TT</p>
             </nav>
          </div>
 
-         <div class="cards">
-            <div class="cards__card">
-               <a href= "#" class="cards__image-container">
-                  <img src="image/cervelo.png" alt="" class="cards__image">
-               </a>
-               <p class="cards__info">Cervelo Caledonia-5</p>
-            </div>
+         <div class="swiper cards cards_active tab-1">
+            <div class="swiper-wrapper">
 
-            <div class="cards__card">
-               <a href="#" class="cards__image-container">
-                  <img src="image/cannond.png" alt="" class="cards__image">
-               </a>
-               <p class="cards__info">Cannondale Systemsix Himod</p>
-            </div>
+               <div class="swiper-slide cards__card">
+                  <a href= "https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN " target="_black" class="cards__image-container">
+                     <img src="image/cervelo.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Cervelo Caledonia-5</p>
+               </div>
 
-            <div class="cards__card">
-               <a href="#" class="cards__image-container">
-                  <img src="image/trek.png" alt="" class="cards__image">
-               </a>
-               <p class="cards__info">Trek Domane SL-7</p>
-            </div>
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J"  target="_black" class="cards__image-container">
+                     <img src="image/cannond.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Cannondale Systemsix Himod</p>
+               </div>
 
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF"  target="_black" class="cards__image-container">
+                     <img src="image/trek.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Trek Domane SL-7</p>
+               </div>
+            </div>
+            <div class="cards__pagination swiper-pagination">
+            </div>
          </div>
-      </section> -->
+
+         <div class="swiper cards tab-2">
+            <div class="swiper-wrapper">
+         
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE"  target="_black" class="cards__image-container">
+                     <img src="image/cervelo-grevl.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Cervelo Aspero GRX 810</p>
+               </div>
+         
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9"  target="_black" class="cards__image-container">
+                     <img src="image/spec-grevl.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Specialized S-Works Diverge</p>
+               </div>
+         
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8"  target="_black" class="cards__image-container">
+                     <img src="image/cannod-grevl.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Cannondale Topstone Lefty 3</p>
+               </div>
+            </div>
+            <div class="cards__pagination swiper-pagination">
+            </div>
+         </div>
+
+         <div class="swiper cards tab-3">
+            <div class="swiper-wrapper">
+         
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9"  target="_black" class="cards__image-container">
+                     <img src="image/spec-tt.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Specialized S-Works Shiv</p>
+               </div>
+         
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835"  target="_black" class="cards__image-container">
+                     <img src="image/bmc-tt.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">BMC Timemachine 01 ONE</p>
+               </div>
+         
+               <div class="swiper-slide cards__card">
+                  <a href="https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q"  target="_black" class="cards__image-container">
+                     <img src="image/cervrlo-tt.png" alt="Велосипед" class="cards__image">
+                  </a>
+                  <p class="cards__info">Cervelo P-Series</p>
+               </div>
+            </div>
+            <div class="cards__pagination swiper-pagination cards__pagination_dark">
+            </div>
+         </div>
+      </section>
       <!-- !section training -->
       <section class="training" id="training">
          <h2 class="training__title">Тренировки</h2>
          <p class="training__subtitle">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать эти тренировки поможет приложение
          Strava, а также это приложение позволит построить тренировочный план.</p>
          <div class="training__apps">
-            <p class="training__app">Strava</p>
-            <p class="training__app">Komoot</p>
+            <a href="https://www.strava.com" target="_blanck" class="training__app">Strava</a>
+            <a href="https://www.komoot.com" target="_blanck" class="training__app">Komoot</a>
          </div>
          <img src="image/tren.png" alt="Тренировка" class="training__image">
       </section>
@@ -147,12 +219,13 @@
          <button class="footer__button" type="submit">ok</button>
       </form>
       <div class="footer__bottom">
-         <p class="footer__copy">© Road Club 2021</p>
-         <div class="footer__switch">
-            <img src="image/sun.svg" alt="." class="footer__sun">
-            <img src="image/oval.svg" alt="." class="footer__oval">
-            <img src="image/ball.svg" alt="." class="footer__ball">
-            <img src="image/moon.svg" alt="." class="footer__moon">
+         <p class="footer__copy">&copy; Road Club 2021</p>
+         <img src="image/bottom-logo.svg" alt="Лого" class="footer__logo">
+         <div class="switcher footer__swither">
+            <img src="image/sun.svg" alt="&lArr;" class="switcher__sun">
+            <img src="image/oval.svg" alt="&sub;&sup;" class="switcher__oval footer__switcher-oval">
+            <img src="image/ball.svg" alt="&bull;" class="switcher__ball footer__switcher-ball">
+            <img src="image/moon.svg" alt="&rArr;" class="switcher__moon">
          </div>
       </div>
    </footer>
