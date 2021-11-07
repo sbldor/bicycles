@@ -1,5 +1,5 @@
 .training {
-   padding: 150px 120px 120px 120px;
+   padding: 90px 120px 120px 120px;
    @include grid(1fr auto, repeat(4,auto));
    justify-items: start;
    align-items: start;
@@ -13,23 +13,34 @@
       @include fonts (55px, 50px, 700, $textColore);
       margin-bottom: 50px;
       grid-area: title;
+      &_dark {
+         color: $textColoreDark
+      }
    }
    &__subtitle {
-      @include fonts (18px, 28px, 400, $textColore);
+      @include fonts (18px, 28px, 400, #222222);
       opacity: 0.7;
       max-width: 460px;
       grid-area: subtitle;
+      &_dark {
+         color: #E3E3E3
+      }
    }
    &__apps {
       @include flex (row, space-between);
       width: 154px;
       grid-area: app;
       align-self: end;
+
    }
    &__app {
+      text-decoration: none;
       cursor: pointer;
       @include fonts (18px, 28px, 600, $textColore);
       @include opacity (1, 0.75);
+      &_dark {
+         color: $textColoreDark;
+      }
    }
    &__image {
       max-width: 580px;

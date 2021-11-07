@@ -5,12 +5,19 @@
    position: relative;
    &__title{
       @include fonts(55px, 60px, 700, $textColore);
+      &_dark {
+         color: $textColoreDark;
+      }
    }
    &__subtitle {
       max-width: 460px;
-      @include fonts(18px, 28px, 400, $textColore);
+      @include fonts(18px, 28px, 400, #222222);
       margin: 50px 0 80px 0;
       opacity: 0.7;
+      &_dark {
+         color: #E5E5E5;
+;
+      }
    }
    &__button-left {
       @include button (50px, 50px, all 0.3s ease, 0.6)
@@ -22,6 +29,7 @@
    }
    &__button-right {
       @include button (50px, 50px, all 0.3s ease, 0.6)
+      
    }
    &__slider-button-prev {
       border-radius: 50%;

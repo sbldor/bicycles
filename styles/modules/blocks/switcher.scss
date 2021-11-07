@@ -1,0 +1,32 @@
+.switcher {
+      width: 135.35px;
+      position: relative;
+      @include flex(row, space-between);
+      margin-right: 122.65px;
+      &__sun {
+         width: 28px;
+      }
+      &__oval {
+         width: 44px;
+      }
+      &__ball {
+         position: absolute;
+         top: 4px;
+         right: 63px;
+         background-color: #24B47E;
+         border-radius: 50%;
+         transition: all 0.3s ease;
+      }
+      &__ball_dark {
+         right: 44px;
+      }
+      &__moon {
+         width: 19.35px;
+      }
+   }
+   
+@media screen and (max-width: 900px){
+   .switcher {
+      margin-right: 0;
+   }
+}

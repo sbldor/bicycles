@@ -1,10 +1,20 @@
 .footer {
    padding: 80px 0 60px 120px;
    background-color: #EFEFEF;
+   &_dark {
+      background-color: #2F2F2F;
+   }
+   &__switcher-ball_dark {
+      right: 44px;
+   }
+
    &__title {
       @include fonts (24px, 32px, 600, $textColore);
       margin-bottom: 50px;
       max-width: 229px;
+      &_dark {
+         color: $textColoreDark;
+      }
    }
    &__form {
       cursor: pointer;
@@ -18,6 +28,9 @@
       border-radius: 4px;
       height: 50px;
       margin-bottom: 100px;
+      &_dark{
+         border: 1px solid rgba(125, 125, 125, 0.5);
+      }
    }
    &__input {
       cursor: pointer;
@@ -28,6 +41,13 @@
       @include fonts (13px, 27px, 500, $textColore);
       padding: 11px 0 11px 20px;
       width: 282px;
+      &_dark {
+         background-color: #2F2F2F;
+         color: $textColoreDark;
+         &:hover::placeholder {
+            color: $textColoreDark;
+         } 
+      }
       
       &:focus {
          outline: none;
@@ -38,17 +58,22 @@
          transition: all 3ms ease;
       }
       &:hover::placeholder {
-         color: $textColore;
-;
+//          color: $textColore;
+// ;
          opacity: 1;
       }
    }
    &__button {
       visibility: hidden;
       cursor: pointer;
+      @include fonts (13px, 28px, 500, $textColore);
       @include button(16px, 28px, null, null);
       border: 0;
       background-color: #EFEFEF;
+      &_dark {
+         background-color: #2F2F2F;
+         color: $textColoreDark;
+      }
    }
    &__button_aktive {
       visibility: visible;
@@ -59,42 +84,48 @@
    }
    &__copy {
       @include fonts(14px, 19.6px, 600, #CFCFCF);
+      &_dark {
+         color: #565656;
+      }
    }
-   &__switch {
-      width: 135.35px;
-      position: relative;
-      @include flex(row, space-between);
+   &__logo {
+      display: none;
+   }
+   &__swither {
       margin-right: 122.65px;
    }
-   &__sun {
-      width: 28px;
-   }
-   &__oval {
-      width: 44px;
-   }
-   &__ball {
-      position: absolute;
-      top: 4px;
-      right: 63px;
-      background-color: #24B47E;
-      border-radius: 50%;
-   }
-   &__moon {
-      width: 19.35px;
-   }
+   
 }
 
 @media screen and (max-width: 900px) {
    .footer{
       padding: 60px 18px 25px 18px;
-      &__switch {
-         margin-right: 16px; 
+      &__swither {
+      margin-right: 0;
+   }
+   }
+}
+
+@media screen and (max-width: 650px) {
+   .footer{
+      &__swither {
+         display: none;
+      }
+      &__logo {
+         display: block;
+         width: 38px;
+         padding-right: -2;
+      }
+      &__copy {
+         align-self: center;
       }
    }
 }
 
+
 @media screen and (max-width: 396px) {
    .footer{
+      padding-bottom: 16px;
       &__form {
          width: 284px;
       }

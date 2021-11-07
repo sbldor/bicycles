@@ -22,14 +22,24 @@
       @include fonts(34px, 44px, 600, $textColore);
       max-width: 470px;
       flex-grow: 1;
+      &_dark {
+         color: $textColoreDark
+      }
    }
    &__name {
       @include fonts(20px, 32px, 500, $textColore);
       margin-bottom: 6px;
+      &_dark {
+         color: $textColoreDark
+      }
    }
    &__info {
-      @include fonts(16px, 28px, 400, $textColore);
+      @include fonts(16px, 28px, 400, #222222);
       opacity: 0.7;
+      &_dark {
+         color: #E5E5E5;
+
+      }
    }
 }  
 
