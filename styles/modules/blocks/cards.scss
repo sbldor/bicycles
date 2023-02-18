@@ -1,11 +1,13 @@
 .cards {
-   padding: 120px 120px 0 0;
-   display: flex;
-   justify-content: space-between;
+   display: none;
+   width: 83.334%;
+   &_active {
+      display: block;
+   }
    &__card {
       @include flex (column, space-between);
-      max-height: 424px;
-      max-width: 380px;
+      height: 424px;
+      width: 380px;
    }
    &__image-container {
       display: flex;
@@ -14,7 +16,7 @@
       width: 380px;
       height: 380px;
       background: #F4F4F4;
-      box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.44);
       border-radius: 20px;
    }
    &__image {
@@ -25,5 +27,124 @@
       @include fonts (18px, 22px, 600, $textColore);
       margin-top: 22px;
       margin-left: 6px;
+      &_dark{
+         color: $textColoreDark;
+      }
+   }
+   &__pagination {
+      color: $textColoreDark;
+   }
+}
+
+@media screen and (max-width: 1400px){
+   .cards {
+      &__card {
+         height: 379px;
+         width: 330px;
+      }
+      &__image-container {
+         width: 330px;
+         height: 330px;
+      }
+      &__image {
+         max-width: 300px;
+      }
+   }
+}
+
+@media screen and (max-width: 1240px){
+   .cards {
+      &__card {
+         height: 325px;
+         width: 280px;
+      }
+      &__image-container {
+         width: 280px;
+         height: 280px;
+      }
+      &__image {
+         max-width: 250px;
+      }
+   }
+}
+
+@media screen and (max-width: 1060px){
+   .cards {
+      &__card {
+         height: 424px;
+         width: 380px;
+      }
+      &__image-container {
+         width: 380px;
+         height: 380px;
+         box-shadow: 0 30px 50px rgba(0, 0, 0, 0.44);
+      }
+      &__image {
+         max-width: 340px;
+      }
+   }
+}
+
+@media screen and (max-width: 1040px){
+   .cards {
+      &__card {
+         height: 379px;
+         width: 330px;
+      }
+      &__image-container {
+         width: 330px;
+         height: 330px;
+      }
+      &__image {
+         max-width: 300px;
+      }
+   }
+}
+
+@media screen and (max-width: 900px){
+   .cards {
+      width: 380px;
+      
+      &__card {
+         height: 424px;
+         width: 380px;
+         margin:auto;
+      }
+      &__image-container {
+         width: 380px;
+         height: 380px;
+         box-shadow: 0 30px 50px rgba(0, 0, 0, 0.44);
+      }
+      &__image {
+         max-width: 340px;
+      }
+   }
+}
+
+@media screen and (max-width: 530px){
+   .cards {
+      width: 284px;
+      &__card {
+         height: 330px;
+         width: 284px;
+         margin:auto;
+      }
+      &__image-container {
+         width: 284px;
+         height: 284px;
+      }
+      &__image {
+         max-width: 256px;
+      }
+      &__info {
+         @include fonts (14px, 18px, null, null);
+         margin: -30px auto 0;
+         &_dark {
+            color: $textColore;
+         }
+      }
+      &__image-container {
+         box-shadow: 0 20px 20px rgba(0, 0, 0, 0.24);
+      }
    }
 }

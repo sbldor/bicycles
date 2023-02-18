@@ -1,11 +1,15 @@
 .bicycle {
-   padding: 60px 0 60px 0;
-   margin-left: 120px;
+   padding: 60px 0 0 0;
+   
    &__info {
       @include flex (row, space-between);
    }
    &__title {
       @include fonts (55px, 60px, 700, $textColore);
+      margin-left: 120px;
+      &_dark {
+         color: $textColoreDark;
+      }
    }
    &__navigation {
       @include flex (row, flex-end);
@@ -16,10 +20,120 @@
       @include fonts (18px, 28px, 400, #222222);
       margin-left: 40px;
       @include opacity (0.7, 0.6);
+      &_dark {
+         color: #fff;
+      }
    }
    &__button_active {
-      color: $textColore;
       font-weight: 600;
       @include opacity (1, 0.75);
+   }
+   &__button-bar {
+      cursor: pointer;
+      display: none;
+   }
+}
+
+// .bicycle__button.active {
+//    color: $textColore;
+//    font-weight: 600;
+//    @include opacity (1, 0.75);
+// }
+
+@media screen and (max-width: 1330px){
+   .bicycle {
+      &__title {
+         @include fonts (40px, 55px, null, null);
+         margin-left: 120px;
+      }  
+   }  
+}
+
+@media screen and (max-width: 900px){
+   .bicycle {
+      border-bottom: 1px solid #E3E3E3;
+      &__title {
+         margin-left: 18px;
+      }
+      &__navigation {
+      @include flex (column, flex-start);
+      position: relative;
+      z-index: 11;
+      margin-right: 18px;
+      overflow: hidden;
+      height: 40px;
+      width: 140px;
+      border: 1px solid #E3E3E3;
+      border-radius: 2px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      &:hover {
+         overflow: visible;
+      }
+      }
+      &__button {
+         
+         margin-left: -1px;
+         padding: 3px 0 3px 0;
+         padding-left: 14px;
+         border-bottom: 1px solid #222222;
+         border-radius: 3px;
+         @include opacity (0.9, 0.7);
+         &_dark {
+            background-color: #E3E3E3;
+            // border-left: 1px solid #222222;
+            // border-right: 1px solid #222222;
+            color: #222222;
+         }
+      } 
+      &__button-bar {
+         @include fonts (18px, 32px, 600, $textColore);
+         display: flex;
+         justify-content: space-between;
+         text-align: left;
+         box-sizing: border-box;
+         height: 40px;
+         width: 140px;
+         border: 0;
+         padding: 3px;
+         padding-left: 14px;
+         background-color: $backColore;
+      }
+      &__jack {
+         padding-right: 15px;
+      }
+   }
+}
+
+@media screen and (max-width: 650px){
+   .bicycle {
+      padding-bottom: 40px;
+      &__info {
+      @include flex (column, flex-start);
+      }
+      &__navigation {
+         width: 114px;
+         height: 30px;
+         margin: 40px 0 0 18px;
+      }
+      &:hover {
+         overflow: visible;
+      }
+
+      &__button {
+         @include fonts (11px, 14px, null, null);
+         margin-left: -1px;
+      } 
+      &__button-bar {
+         @include fonts (11px, 14px, null, null);
+         height: 30px;
+         width: 114px;
+         padding: 9px 0 9px 14px;
+         padding-left: 12px;
+      }
+      &__jack {
+         padding-right: 12.5px;
+      }
    }
 }

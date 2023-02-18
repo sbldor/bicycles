@@ -16,6 +16,52 @@
   padding: 0;
   z-index: 1;
 }
+
+.swiper.cards {
+  padding:120px 120px 120px 120px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1060px){
+  .swiper.cards {
+  padding:120px 70px 120px 70px;
+  margin:0;
+}
+}
+
+@media screen and (max-width: 900px){
+  .swiper.cards {
+    padding-right: 80px;
+  margin:auto;
+  /* padding-right: 0; */
+}
+}
+
+@media screen and (max-width: 650px){
+  .swiper.cards {
+    padding-top: 35px;
+    padding-bottom: 64px;
+}
+}
+
+
+
+
+
+@media screen and (max-width: 530px){
+  .swiper.cards {
+    padding-right: 70px;
+}
+}
+
+@media screen and (max-width: 435px){
+  .swiper.cards {
+    padding-right: 18px;
+    padding-left: 18px;
+}
+}
+
 .swiper-vertical > .swiper-wrapper {
   flex-direction: column;
 }
@@ -45,6 +91,8 @@
   position: relative;
   transition-property: transform;
 }
+
+
 .swiper-slide-invisible-blank {
   visibility: hidden;
 }
@@ -188,7 +236,7 @@
   align-items: center;
   justify-content: center;
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
-  cursor: url("../images/cursor_pointer.svg"), pointer;
+  cursor: pointer;
 }
 
 /* !варх левой кнопки */
@@ -384,6 +432,37 @@
   left: 0;
   width: 100%;
 }
+
+@media screen and (max-width:1060px){
+  .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 60px;
+}
+}
+
+@media screen and (max-width:650px){
+  .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 30px;
+}
+}
+
+@media screen and (max-width:530px){
+  .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 10px;
+}
+}
+
+
+
+
 .swiper-pagination-bullets-dynamic {
   overflow: hidden;
   font-size: 0;
@@ -472,7 +551,14 @@ button.swiper-pagination-bullet {
 .swiper-pagination-horizontal.swiper-pagination-bullets
   .swiper-pagination-bullet {
   margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+  background-color: #151515;
 }
+
+.cards_dark .swiper-pagination-bullets .swiper-pagination-bullet {
+  
+  background-color:  #fff;
+}
+
 .swiper-horizontal
   > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
 .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
