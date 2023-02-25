@@ -16,4 +16,4 @@
 </br>
     
 ## GitHubPages
-[GhPages](https://nrths.github.io/bicycles/).
+[GhPages](https://sbldor.github.io/bicycles/).
